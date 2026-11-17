@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
 <title>Online MBA | Adichunchanagiri University Online</title>
 <meta name="description" content="Two-year UGC-entitled Online MBA from Adichunchanagiri University, a NAAC A+ accredited university. Curriculum, micro-credential pathways, eligibility and careers.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,7 +20,7 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-img{max-width:100%;display:block}
+img{max-width:100%;height:auto;display:block}
 .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
 section{padding:100px 0;position:relative}
 .kicker{display:inline-block;font-size:.76rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
@@ -90,7 +91,7 @@ nav .btn{padding:11px 22px;font-size:.9rem}
 .about-media .campus{border-radius:var(--r);overflow:hidden;aspect-ratio:4/3.1}
 .about-media .campus img{width:100%;height:100%;object-fit:cover;object-position:center 85%}
 .chancellor{position:absolute;right:-20px;bottom:0;width:240px;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 24px 44px -22px rgba(31,26,43,.35);border:1px solid var(--line)}
-.chancellor img{aspect-ratio:1.1;object-fit:cover;object-position:top;width:100%}
+.chancellor img{aspect-ratio:1.1;object-fit:cover;object-position:top;width:100%;height:auto}
 .chancellor div{padding:12px 16px;font-size:.78rem;color:var(--red);line-height:1.4;font-weight:600;border-top:3px solid var(--amber)}
 .chancellor b{display:block;color:var(--ink);font-size:.84rem}
 .about p+p{margin-top:14px}
@@ -323,12 +324,177 @@ footer .disc{max-width:920px;line-height:1.7}
   .chancellor{width:180px}
   .logo img{height:40px}
   nav .wrap{height:66px}
-  nav .btn{display:none}
   .mbar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:60;transform:translateY(130%);transition:transform .35s}
   .mbar.show{transform:none}
   .mbar .btn{width:100%;justify-content:center;box-shadow:0 14px 30px -12px rgba(172,32,30,.6)}
   .chips{grid-template-columns:1fr}
 }
+
+/* ===== Mobile & touch optimisation ===== */
+html{-webkit-text-size-adjust:100%}
+section[id]{scroll-margin-top:72px}
+body{-webkit-tap-highlight-color:transparent}
+button,a{touch-action:manipulation}
+.burger{display:none}
+.mnav{display:none}
+@media (hover:none){
+  .why-card:hover,.ap:hover,.el:hover,.logo-chip:hover,.btn:hover{transform:none;box-shadow:none}
+}
+@media (max-width:1000px){
+  .seg{display:flex;width:100%;overflow-x:auto;scrollbar-width:none}
+  .seg::-webkit-scrollbar{display:none}
+  .seg button{flex:1 0 auto;white-space:nowrap}
+  .pw-list{scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .pw-list::-webkit-scrollbar{display:none}
+}
+@media (max-width:760px){
+  section{padding:64px 0}
+  .wrap{padding:0 18px}
+  h2{font-size:1.75rem;margin:10px 0 12px}
+  h2::after{margin-top:12px;width:44px;height:3px}
+  .lead{font-size:.98rem}
+  .kicker{font-size:.7rem}
+
+  /* nav */
+  nav .wrap{height:64px}
+  .logo img{height:38px}
+  nav .btn.nav-apply{display:inline-flex;padding:9px 14px;font-size:.84rem;border-radius:8px}
+  nav .btn.nav-apply svg{display:none}
+  .burger{display:grid;place-items:center;width:40px;height:40px;border:1px solid var(--line);border-radius:10px;background:#fff;cursor:pointer;margin-left:8px}
+  .burger span,.burger span::before,.burger span::after{display:block;width:18px;height:2px;background:var(--ink);border-radius:2px;position:relative;transition:transform .25s,background .25s}
+  .burger span::before,.burger span::after{content:"";position:absolute;left:0}
+  .burger span::before{top:-6px}.burger span::after{top:6px}
+  nav.open .burger span{background:transparent}
+  nav.open .burger span::before{transform:translateY(6px) rotate(45deg)}
+  nav.open .burger span::after{transform:translateY(-6px) rotate(-45deg)}
+  .nav-right{display:flex;align-items:center}
+  .mnav{display:block;position:absolute;left:0;right:0;top:64px;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 18px 30px -20px rgba(31,26,43,.35);max-height:0;overflow:hidden;transition:max-height .35s ease}
+  nav.open .mnav{max-height:420px}
+  .mnav a{display:block;padding:15px 22px;border-top:1px solid var(--line);color:var(--ink);font-weight:600;text-decoration:none;font-size:.98rem}
+  .mnav a:active{background:var(--blush)}
+
+  /* hero */
+  .hero{padding:96px 0 48px}
+  .hero .wrap{gap:28px}
+  .pill{font-size:.76rem;padding:5px 12px 5px 5px}
+  .pill .long{display:none}
+  .hero h1{font-size:2.35rem;margin:16px 0 14px}
+  .hero p.sub{font-size:1rem}
+  .cta-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+  .cta-row .btn{justify-content:center;padding:14px 12px;font-size:.92rem}
+  .trust{margin-top:24px}
+  .trust div{padding:12px 14px}
+  .trust b{font-size:.92rem}
+  .hero-visual{max-width:none;width:100%}
+  .photo-frame{aspect-ratio:4/3.4;border-radius:18px}
+
+  .ribbon{padding:14px 0}
+  .ribbon span{font-size:.76rem;padding-right:32px}
+  .ribbon span::after{margin-left:32px}
+
+  /* stats */
+  .stats{margin-top:40px}
+  .stat{padding:20px 16px}
+  .stat .n{font-size:1.9rem}
+  .stat .n small{font-size:.85rem;margin-left:4px}
+  .stat p{font-size:.78rem;line-height:1.45}
+
+  /* about */
+  .about{gap:32px}
+  .about-media{padding-bottom:0}
+  .about-media .campus{aspect-ratio:16/11}
+  .chancellor{position:relative;right:auto;bottom:auto;width:auto;display:flex;align-items:center;margin-top:-28px;margin-left:16px;margin-right:16px}
+  .chancellor img{width:96px;height:96px;aspect-ratio:1;flex:0 0 96px}
+  .chancellor div{border-top:0;border-left:3px solid var(--amber)}
+  .motto .m{font-size:1.2rem}
+
+  /* why */
+  .why-grid{margin-top:30px;gap:12px}
+  .why-card{padding:22px 20px;display:grid;grid-template-columns:44px 1fr;column-gap:14px}
+  .why-card .ic{grid-row:span 2;width:44px;height:44px}
+  .why-card h3{margin:2px 0 6px;font-size:1.02rem}
+  .why-card p{font-size:.88rem}
+
+  /* overview */
+  .ov{gap:30px}
+  .hl-list li{font-size:.94rem;padding:13px 0}
+  .credits{padding:26px 22px}
+  .credits .big{font-size:3.2rem}
+  .legend div{gap:12px}
+  .legend div span{display:flex;align-items:center}
+  .legend i{flex:0 0 9px}
+
+  /* curriculum */
+  .cur-head{gap:18px}
+  .seg button{padding:10px 14px;font-size:.85rem}
+  .courses{margin-top:22px;gap:10px;min-height:0}
+  .course{padding:15px 16px;font-size:.93rem}
+  .course .tag{flex:0 0 34px;height:34px}
+
+  /* pathways */
+  .pw{margin-top:28px;gap:14px}
+  .pw-list{padding:6px;gap:6px}
+  .pw-list button{padding:10px 14px;font-size:.86rem;border:1px solid var(--line)}
+  .pw-list button.on{border-color:#f0c9c7}
+  .pw-panel{padding:24px 18px}
+  .pw-panel h3{font-size:1.35rem;margin:12px 0 18px}
+  .steps{gap:10px}
+  .step{padding:16px}
+  .mcc-info div{padding:14px 16px}
+  .benefits span{font-size:.82rem;border-radius:12px}
+
+  /* eligibility */
+  .el-grid{gap:30px}
+  .el{flex-direction:column;gap:6px;padding:18px 20px}
+  .el .big{min-width:0;font-size:1.3rem}
+  .el .big br{display:none}
+
+  /* careers */
+  .roles{gap:8px;margin-top:22px}
+  .roles span{font-size:.85rem;padding:8px 14px}
+  .logos{margin-top:40px}
+  .logo-chip{width:140px;height:70px;padding:12px 16px;border-radius:10px}
+  .logo-chip img{max-height:40px;max-width:104px}
+  .marquee .row{gap:10px;animation-duration:38s}
+
+  /* approach */
+  .ap-wrap{margin-top:30px;gap:12px}
+  .ap{padding:20px;display:grid;grid-template-columns:44px 1fr;column-gap:14px;align-items:start}
+  .ap .ic{margin:0}
+
+  /* degree */
+  .deg{padding:28px 20px;gap:34px;border-radius:18px}
+  .cert{max-width:260px}
+
+  /* faq */
+  .faq-grid{gap:20px}
+  .qa button{font-size:.96rem;padding:18px 0}
+
+  .final .box{padding:40px 20px;border-radius:18px}
+  footer{padding-bottom:100px}
+  footer .top{flex-direction:column;align-items:flex-start;gap:18px}
+
+  /* apply bar */
+  .mbar{display:flex;position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:60;transform:translateY(160%);transition:transform .35s}
+  .mbar.show{transform:none}
+  .mbar .btn{width:100%;justify-content:center}
+
+  /* modal as bottom sheet */
+  .modal{padding:0;place-items:end stretch}
+  .sheet{max-width:none;border-radius:20px 20px 0 0;max-height:92vh;transform:translateY(100%)}
+  .modal.show .sheet{transform:none}
+  .sheet-main{padding:26px 20px calc(24px + env(safe-area-inset-bottom))}
+  .sheet-main::before{content:"";display:block;width:40px;height:4px;border-radius:4px;background:var(--line);margin:-10px auto 18px}
+  .close{top:12px;right:12px}
+  .fld input,.fld select{font-size:16px}
+  .chips label{padding:12px;font-size:.86rem}
+}
+@media (max-width:360px){
+  .hero h1{font-size:2.05rem}
+  .cta-row{grid-template-columns:1fr}
+  .stat .n{font-size:1.6rem}
+}
+
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 
 </style>
@@ -337,19 +503,20 @@ footer .disc{max-width:920px;line-height:1.7}
 
 <nav id="nav">
   <div class="wrap">
-    <a href="#top" class="logo"><img src="assets/acu-logo.png?v=2" alt="Adichunchanagiri University Online"></a>
+    <a href="#top" class="logo"><img src="assets/acu-logo.png?v=2" width="612" height="201" alt="Adichunchanagiri University Online"></a>
     <div class="menu">
       <a href="#about">About</a><a href="#programme">Programme</a><a href="#curriculum">Curriculum</a><a href="#pathways">Pathways</a><a href="#eligibility">Eligibility</a><a href="#faq">FAQs</a>
     </div>
-    <button class="btn" data-apply>Apply Now <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+    <div class="nav-right"><button class="btn nav-apply" data-apply>Apply Now <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button><button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span></button></div>
   </div>
+  <div class="mnav" id="mnav"><a href="#about">About</a><a href="#programme">Programme</a><a href="#curriculum">Curriculum</a><a href="#pathways">Pathways</a><a href="#eligibility">Eligibility</a><a href="#faq">FAQs</a></div>
 </nav>
 
 <!-- HERO -->
 <header class="hero" id="top">
     <div class="wrap">
     <div>
-      <div class="pill rv"><b>ADMISSIONS OPEN</b> Online MBA · 2 Years · 4 Semesters</div>
+      <div class="pill rv"><b>ADMISSIONS OPEN</b> Online MBA<span class="long">&nbsp;· 2 Years · 4 Semesters</span></div>
       <h1 class="rv d1">Master the <span class="hl">language of business.</span></h1>
       <p class="sub rv d2">A UGC-entitled, NEP-aligned Online MBA from a NAAC 'A+' accredited university, with live sessions, faculty mentorship and job-focused micro-credentials. Built for working professionals and fresh graduates.</p>
       <div class="cta-row rv d3">
@@ -364,7 +531,7 @@ footer .disc{max-width:920px;line-height:1.7}
       </div>
     </div>
     <div class="hero-visual rv d2">
-      <div class="photo-frame"><!-- HERO MODEL IMAGE: replace src with your South Indian model stock photo --><img src="assets/hero.jpg?v=2" alt="Online MBA learner studying on a laptop"></div>
+      <div class="photo-frame"><!-- HERO MODEL IMAGE: replace src with your South Indian model stock photo --><img src="assets/hero.jpg?v=2" width="714" height="893" fetchpriority="high" decoding="async" alt="Online MBA learner studying on a laptop"></div>
     </div>
   </div>
 </header>
@@ -387,9 +554,9 @@ footer .disc{max-width:920px;line-height:1.7}
 <section id="about">
   <div class="wrap about">
     <div class="about-media rv">
-      <div class="campus"><img src="assets/campus.jpg?v=2" alt="Adichunchanagiri University campus"></div>
+      <div class="campus"><img src="assets/campus.jpg?v=2" width="1400" height="560" loading="lazy" decoding="async" alt="Adichunchanagiri University campus"></div>
       <div class="chancellor">
-        <img src="assets/chancellor.jpg?v=2" alt="Jagadguru Sri Sri Sri Dr. Nirmalanandanatha Mahaswamiji">
+        <img src="assets/chancellor.jpg?v=2" width="604" height="556" loading="lazy" decoding="async" alt="Jagadguru Sri Sri Sri Dr. Nirmalanandanatha Mahaswamiji">
         <div><b>Jagadguru Sri Sri Sri Dr. Nirmalanandanatha Mahaswamiji</b>Hon'ble Chancellor</div>
       </div>
     </div>
@@ -510,7 +677,7 @@ footer .disc{max-width:920px;line-height:1.7}
     </div>
     <div class="el-cards">
       <div class="el rv"><div class="big">50%</div><p><b>Bachelor's Degree</b> (minimum of 3 years degree program), with at least 50% marks or equivalent CGPA (45% in case of SC/ST) from a recognized University.</p></div>
-      <div class="el rv d1"><div class="big">Final<br>Year</div><p>Students who are in the <b>final year of the bachelor's degree</b> are also eligible to apply.</p></div>
+      <div class="el rv d1"><div class="big">Final <br>Year</div><p>Students who are in the <b>final year of the bachelor's degree</b> are also eligible to apply.</p></div>
       <div class="el rv d2"><div class="big">Open</div><p><b>Working professionals and recent graduates</b> are welcome to apply.</p></div>
     </div>
   </div>
@@ -675,12 +842,18 @@ $('#yr').textContent=new Date().getFullYear();
 const onScroll=()=>{const y=scrollY;$('#nav').classList.toggle('scrolled',y>40);$('#mbar').classList.toggle('show',y>500)};
 addEventListener('scroll',onScroll,{passive:true});onScroll();
 
+
+/* mobile menu */
+const navEl=$('#nav'),burger=$('#burger');
+burger.addEventListener('click',()=>{const o=navEl.classList.toggle('open');burger.setAttribute('aria-expanded',o)});
+$$('#mnav a').forEach(a=>a.addEventListener('click',()=>{navEl.classList.remove('open');burger.setAttribute('aria-expanded','false')}));
+
 /* ribbon */
 const rib=['UGC Entitled','NAAC A+ Accredited','AICTE Approved','NBA Accredited Programmes','NIRF Ranked','ARIIA “Excellent”','NEP-Aligned Curriculum','100% Online'];
 $('#ribbon').innerHTML=[...rib,...rib].map(t=>`<span>${t}</span>`).join('');
 
 /* reveal + counters + credit bar */
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('in');io.unobserve(e.target)}),{threshold:.15});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('in');io.unobserve(e.target)}),{threshold:.08,rootMargin:'0px 0px -40px 0px'});
 $$('.rv').forEach(el=>io.observe(el));
 const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;
   const el=e.target,end=+el.dataset.count,t0=performance.now(),dur=1600;
@@ -701,7 +874,7 @@ const esc=s=>s.replace(/&/g,'&amp;');
 const showSem=i=>{
   $('#courses').innerHTML=SEM[i].map(([n,s,k],j)=>`<div class="course ${k||''}" style="animation-delay:${j*.06}s"><div class="tag">${k==='mcc'?'MC':k==='proj'?'PR':String(j+1).padStart(2,'0')}</div><div>${esc(n)}${s?`<small>${s}</small>`:''}</div></div>`).join('');
   $$('#seg button').forEach((b,k)=>b.classList.toggle('on',k===i));
-  const b=$$('#seg button')[i],bg=$('#seg .pill-bg');bg.style.left=b.offsetLeft+'px';bg.style.width=b.offsetWidth+'px';
+  const b=$$('#seg button')[i],bg=$('#seg .pill-bg');if(innerWidth<=1000){const s=$('#seg');s.scrollTo({left:b.offsetLeft-12,behavior:'smooth'})}bg.style.left=b.offsetLeft+'px';bg.style.width=b.offsetWidth+'px';
 };
 $$('#seg button').forEach(b=>b.addEventListener('click',()=>showSem(+b.dataset.s)));
 addEventListener('resize',()=>showSem($$('#seg button').findIndex(b=>b.classList.contains('on'))));
@@ -726,15 +899,16 @@ const showPw=i=>{
   const [n,r,c]=PW[i];
   $('#pwPanel').innerHTML=`<span class="role">Role focus · ${esc(r)}</span><h3>${esc(n)} Pathway</h3><div class="steps">${c.map((x,k)=>`<div class="step"><div class="s">SEMESTER ${['II','III','IV'][k]}</div><p>${esc(x)}</p></div>`).join('')}</div>`;
   $$('#pwList button').forEach((b,k)=>b.classList.toggle('on',k===i));
+  const ab=$$('#pwList button')[i];if(innerWidth<=1000&&ab){const l=$('#pwList');l.scrollTo({left:ab.offsetLeft-l.offsetWidth/2+ab.offsetWidth/2,behavior:'smooth'})}
 };
 $$('#pwList button').forEach(b=>b.addEventListener('click',()=>{clearInterval(pwTimer);showPw(+b.dataset.i)}));
 showPw(0);
-let pwi=0;pwTimer=setInterval(()=>{pwi=(pwi+1)%PW.length;showPw(pwi)},4500);
+let pwi=0;if(matchMedia('(min-width:1001px) and (hover:hover)').matches){pwTimer=setInterval(()=>{pwi=(pwi+1)%PW.length;showPw(pwi)},4500)}
 $('#pathways').addEventListener('mouseenter',()=>clearInterval(pwTimer),{once:true});
 
 /* logos */
 const LOGOS=[["Google", "assets/logos/google.png?v=2"], ["Amazon", "assets/logos/amazon.png?v=2"], ["Accenture", "assets/logos/accenture.png?v=2"], ["Deloitte", "assets/logos/deloitte.png?v=2"], ["KPMG", "assets/logos/kpmg.png?v=2"], ["EY", "assets/logos/ey.png?v=2"], ["Infosys", "assets/logos/infosys.png?v=2"], ["Cognizant", "assets/logos/cognizant.png?v=2"], ["Tech Mahindra", "assets/logos/techmahindra.png?v=2"], ["Citibank", "assets/logos/citibank.png?v=2"], ["ICICI Bank", "assets/logos/icici.png?v=2"], ["Standard Chartered", "assets/logos/standardchartered.png?v=2"], ["Flipkart", "assets/logos/flipkart.png?v=2"], ["LinkedIn", "assets/logos/linkedin.png?v=2"], ["Facebook", "assets/logos/facebook.png?v=2"], ["Hitachi", "assets/logos/hitachi.png?v=2"], ["Tata Power", "assets/logos/tatapower.png?v=2"], ["Bajaj Electricals", "assets/logos/bajaj.png?v=2"], ["LG Soft India", "assets/logos/lg.png?v=2"], ["Bioclinica", "assets/logos/bioclinica.png?v=2"], ["Prestige", "assets/logos/prestige.png?v=2"], ["Kellogg's", "assets/logos/kelloggs.png?v=2"], ["Johnson Controls", "assets/logos/johnsoncontrols.png?v=2"], ["CBRE", "assets/logos/cbre.png?v=2"]];
-const chip=([n,src])=>`<div class="logo-chip"><img src="${src}" alt="${n}" loading="lazy"></div>`;
+const chip=([n,src])=>`<div class="logo-chip"><img src="${src}" alt="${n}" loading="lazy" decoding="async" width="240" height="80"></div>`;
 const half=Math.ceil(LOGOS.length/2), a=LOGOS.slice(0,half), b=LOGOS.slice(half);
 $('#m1').innerHTML=[...a,...a].map(chip).join('');
 $('#m2').innerHTML=[...b,...b].map(chip).join('');
